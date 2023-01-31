@@ -4,28 +4,33 @@ import { useState } from "react";
 import ChatBox from "./components/ChatBox";
 import InputBox from "./components/InputBox";
 import MessageManager from "./kernel/messageManager";
-import MessageModel from "./models/MessageModel";
 import MessageBox from "./components/MessageBox";
 
 const messageManger = new MessageManager();
 
 function App() {
-  // state for react-like re-rendering
+  const [isResponding, setIsResponding] = useState(false);
   const [messages, setMessages] = useState(
     messageManger.getDisplayableMessages()
   );
 
-  /** Dirty hack to trigger re-render of messages */
-  const dirtySetMessagesHack = (messages: MessageModel[]) => {
-    const newMessages = messages.map((message) => message);
-    setMessages(newMessages);
-  };
-
   const handleSubmit = async (text) => {
-    await messageManger.pushQuestion(text);
-    dirtySetMessagesHack(messageManger.getDisplayableMessages());
-    await messageManger.requestAnswer(text);
-    dirtySetMessagesHack(messageManger.getDisplayableMessages());
+    try {
+      setIsResponding(true);
+      await messageManger.pushQuestion(text);
+      // shallow copy to force re-render of messages
+      const newMessages = Object.assign(
+        [],
+        messageManger.getDisplayableMessages()
+      );
+      setMessages(newMessages);
+      await messageManger.requestAnswer(text);
+      setMessages(messageManger.getDisplayableMessages());
+    } catch (e) {
+      console.log(e);
+    } finally {
+      setIsResponding(false);
+    }
   };
 
   return (
@@ -38,7 +43,7 @@ function App() {
             <MessageBox key={`MessageBox${index}`} message={message} />
           ))}
         </ChatBox>
-        <InputBox onSubmit={handleSubmit} />
+        <InputBox onSubmit={handleSubmit} isActive={!isResponding} />
         <a
           className="App-link"
           href="https://github.com/The-Incremental-Experience/web-client"

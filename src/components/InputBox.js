@@ -9,6 +9,10 @@ function InputBox(props) {
   };
 
   const handleKeyDown = (event) => {
+    if (!props.isActive) {
+      // console.log("please wait for response");
+      return;
+    }
     if (event.keyCode === 13) {
       props.onSubmit(value);
       setValue("");
@@ -18,7 +22,6 @@ function InputBox(props) {
   return (
     <div className={"InputBox"}>
       <TextField
-        maxRows={4}
         value={value}
         onChange={handleChange}
         onKeyDown={handleKeyDown}
