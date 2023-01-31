@@ -1,4 +1,7 @@
 import exampleMessages from "../fixtures/exampleMessages";
+import MessageType from "../models/constants";
+import MessageModel from "../models/MessageModel";
+import { networkCheck, questionPost } from "./api";
 
 class MessageManager {
   constructor() {
@@ -9,9 +12,25 @@ class MessageManager {
     return this.messages;
   }
 
-  sortMessages() {}
+  /** Push question and response placeholder if everything goes well */
+  async pushQuestion(questionText: string) {
+    if (await networkCheck()) {
+      this.messages.push(
+        new MessageModel({ text: questionText, type: MessageType.Question })
+      );
+    }
+  }
 
-  processUserQuestion(userQuery) {}
+  /** Request answer from backend */
+  async requestAnswer(questionText: string) {
+    const responseText = await questionPost(questionText);
+    this.messages.push(
+      new MessageModel({
+        text: responseText,
+        type: MessageType.Answer,
+      })
+    );
+  }
 }
 
 export default MessageManager;

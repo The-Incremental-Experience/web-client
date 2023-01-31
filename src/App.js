@@ -6,7 +6,6 @@ import InputBox from "./components/InputBox";
 import MessageManager from "./kernel/messageManager";
 import MessageModel from "./models/MessageModel";
 import MessageBox from "./components/MessageBox";
-import MessageType from "./models/constants";
 
 const messageManger = new MessageManager();
 
@@ -16,13 +15,17 @@ function App() {
     messageManger.getDisplayableMessages()
   );
 
-  const handleSubmit = (text) => {
-    // dirty hack to trigger re-render in ChatBox due to prop change
+  /** Dirty hack to trigger re-render of messages */
+  const dirtySetMessagesHack = (messages: MessageModel[]) => {
     const newMessages = messages.map((message) => message);
-    newMessages.push(
-      new MessageModel({ text: text, type: MessageType.Question })
-    );
     setMessages(newMessages);
+  };
+
+  const handleSubmit = async (text) => {
+    await messageManger.pushQuestion(text);
+    dirtySetMessagesHack(messageManger.getDisplayableMessages());
+    await messageManger.requestAnswer(text);
+    dirtySetMessagesHack(messageManger.getDisplayableMessages());
   };
 
   return (
