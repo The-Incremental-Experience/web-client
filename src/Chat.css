@@ -1,0 +1,6 @@
+.ChatBox {
+    overflow: auto;
+    width: 75%;
+    max-height: 500px;
+    display: block;
+}

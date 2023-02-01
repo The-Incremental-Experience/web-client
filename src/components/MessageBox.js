@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import "../App.css";
+import "../Message.css";
 import MessageType from "../models/constants";
 
 function MessageBox(props) {
@@ -8,17 +8,13 @@ function MessageBox(props) {
   };
 
   return (
-    <Box className={"MessageBox"} sx={{ border: 1 }}>
-      <div className={isQuestion() ? "QuestionText" : "AnswerText"}>
-        {props.message.text}
-      </div>
+    <Box className={"MessageBox " + (isQuestion() ? "Question" : "Answer")}>
+      <div>{props.message.text}</div>
       {!isQuestion() && props.message.sources ? (
         <div>
           {"Sources for further reading:"}
           {props.message.sources.map((source, index) => (
-            <div className={"AnswerSource"} key={`AnswerSource${index}`}>
-              {source}
-            </div>
+            <div key={`AnswerSource${index}`}>{source}</div>
           ))}
         </div>
       ) : null}

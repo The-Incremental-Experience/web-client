@@ -1,4 +1,4 @@
-import { TextField } from "@mui/material";
+import "../InputBox.css";
 import { useState } from "react";
 
 function InputBox(props) {
@@ -20,14 +20,12 @@ function InputBox(props) {
   };
 
   return (
-    <div className={"InputBox"}>
-      <TextField
-        value={value}
-        onChange={handleChange}
-        onKeyDown={handleKeyDown}
-        variant="outlined"
-      />
-    </div>
+    <input
+      className={"InputBox"}
+      value={value}
+      onChange={handleChange}
+      onKeyDown={handleKeyDown}
+    />
   );
 }
 

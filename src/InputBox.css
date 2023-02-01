@@ -1,0 +1,7 @@
+.InputBox {
+    color: var(--accent-color-light);
+    width: 50%;
+    background-color: var(--accent-color-medium);
+    border: none;
+    font-size: calc(12px + 1vmin);
+}
