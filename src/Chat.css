@@ -2,5 +2,6 @@
     overflow: auto;
     width: 75%;
     max-height: 500px;
-    display: block;
+    display: inline-flex;
+    flex-direction: column;
 }

@@ -16,11 +16,11 @@
 .Answer {
     border-color: var(--accent-color-darker);
     background-color: var(--accent-color-darker);
-    float: left;
+    align-self: flex-start;
 }
 
 .Question {
     border-color: var(--accent-color-medium);
     background-color: var(--accent-color-medium);
-    float: right
+    align-self: flex-end;
 }
