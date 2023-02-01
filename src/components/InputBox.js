@@ -1,4 +1,4 @@
-import "../InputBox.css";
+import "../Input.css";
 import { useState } from "react";
 
 function InputBox(props) {
