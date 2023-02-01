@@ -15,6 +15,9 @@ function MessageBox(props) {
       >
         {props.message.text}
       </div>
+      {props.message.source ? (
+        <div className={"MessageText"}>{props.message.source}</div>
+      ) : null}
     </Box>
   );
 }
