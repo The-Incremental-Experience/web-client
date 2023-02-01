@@ -1,5 +1,9 @@
-export function questionPost(data: string | Object): Promise<string> {
-  return new Promise((resolve) => setTimeout(() => resolve("Answer"), 1000));
+import exampleBackendResponse from "../examples/exampleBackendResponse.json";
+
+export function questionPost(data: string | Object): Promise<Object> {
+  return new Promise((resolve) =>
+    setTimeout(() => resolve(exampleBackendResponse), 1000)
+  );
 }
 
 export function networkCheck(): Promise<boolean> {

@@ -9,14 +9,18 @@ function MessageBox(props) {
 
   return (
     <Box className={"MessageBox"} sx={{ border: 1 }}>
-      <div
-        className={"MessageText"}
-        style={{ color: isQuestion() ? "white" : "gray" }}
-      >
+      <div className={isQuestion() ? "QuestionText" : "AnswerText"}>
         {props.message.text}
       </div>
-      {props.message.source ? (
-        <div className={"MessageText"}>{props.message.source}</div>
+      {!isQuestion() && props.message.sources ? (
+        <div>
+          {"Sources for further reading:"}
+          {props.message.sources.map((source, index) => (
+            <div className={"AnswerSource"} key={`AnswerSource${index}`}>
+              {source}
+            </div>
+          ))}
+        </div>
       ) : null}
     </Box>
   );

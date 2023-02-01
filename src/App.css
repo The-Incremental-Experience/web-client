@@ -28,8 +28,19 @@
     color: #61dafb;
 }
 
-.MessageText {
+.QuestionText {
     font-size: calc(2px + 2vmin);
+    color: white;
+}
+
+.AnswerText {
+    font-size: calc(2px + 2vmin);
+    color: gray;
+}
+
+.AnswerSource {
+    font-size: calc(2px + 2vmin);
+    color: gray;
 }
 
 @keyframes App-logo-spin {

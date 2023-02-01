@@ -23,13 +23,8 @@ class MessageManager {
 
   /** Request answer from backend */
   async requestAnswer(questionText: string) {
-    const responseText = await questionPost(questionText);
-    this.messages.push(
-      new MessageModel({
-        text: responseText,
-        type: MessageType.Answer,
-      })
-    );
+    const response = await questionPost(questionText);
+    this.messages.push(new MessageModel(response));
   }
 }
 
