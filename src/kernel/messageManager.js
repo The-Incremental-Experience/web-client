@@ -1,4 +1,4 @@
-import exampleMessages from "../fixtures/exampleMessages";
+import exampleMessages from "../examples/exampleMessages";
 import MessageType from "../models/constants";
 import MessageModel from "../models/MessageModel";
 import { networkCheck, questionPost } from "./api";
