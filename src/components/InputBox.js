@@ -13,7 +13,7 @@ function InputBox(props) {
       // console.log("please wait for response");
       return;
     }
-    if (event.keyCode === 13) {
+    if (event.keyCode === 13 && value.length > 0) {
       props.onSubmit(value);
       setValue("");
     }
