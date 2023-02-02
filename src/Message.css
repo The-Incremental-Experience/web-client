@@ -24,3 +24,7 @@
     background-color: var(--accent-color-medium);
     align-self: flex-end;
 }
+
+.Sources {
+    margin-top: calc(12px + 1vmin);
+}
