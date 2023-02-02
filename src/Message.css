@@ -1,0 +1,30 @@
+.MessageBox {
+    border-style: solid;
+    border-width: 10px;
+    border-radius: 15px;
+    padding: 2px;
+    margin: 15px;
+    width: 60%;
+
+    border-color: var(--accent-color-dark);
+    background-color: var(--accent-color-dark);
+    color: var(--accent-color-light);
+
+    font-size: calc(12px + 1vmin);
+}
+
+.Answer {
+    border-color: var(--accent-color-darker);
+    background-color: var(--accent-color-darker);
+    align-self: flex-start;
+}
+
+.Question {
+    border-color: var(--accent-color-medium);
+    background-color: var(--accent-color-medium);
+    align-self: flex-end;
+}
+
+.Sources {
+    margin-top: calc(12px + 1vmin);
+}

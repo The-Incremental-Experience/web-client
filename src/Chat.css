@@ -1,0 +1,30 @@
+.ChatBox {
+    overflow: auto;
+    width: 75%;
+    max-height: 500px;
+    display: inline-flex;
+    flex-direction: column;
+}
+
+
+/* Scrollbar */
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: var(--accent-color-darker);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--accent-color-light);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-color-medium);
+}

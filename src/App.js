@@ -4,7 +4,6 @@ import { useState } from "react";
 import ChatBox from "./components/ChatBox";
 import InputBox from "./components/InputBox";
 import MessageManager from "./kernel/messageManager";
-import MessageBox from "./components/MessageBox";
 
 const messageManger = new MessageManager();
 
@@ -38,11 +37,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>Psy-Q Bot</p>
-        <ChatBox>
-          {messages.map((message, index) => (
-            <MessageBox key={`MessageBox${index}`} message={message} />
-          ))}
-        </ChatBox>
+        <ChatBox messages={messages} />
         <InputBox onSubmit={handleSubmit} isActive={!isResponding} />
         <a
           className="App-link"
