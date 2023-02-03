@@ -16,15 +16,15 @@
 
 /* Track */
 ::-webkit-scrollbar-track {
-    background: var(--accent-color-darker);
+    background: var(--highlight-color-dark);
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: var(--accent-color-light);
+    background: var(--highlight-color-light);
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-    background: var(--accent-color-medium);
+    background: var(--accent-color-1);
 }

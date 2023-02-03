@@ -1,9 +1,9 @@
 :root {
-    --background-color: #282c34;
-    --accent-color-light: white;
-    --accent-color-medium: #61dafb;
-    --accent-color-dark: gray;
-    --accent-color-darker: black;
+    --background-color: #191919;
+    --accent-color-1: #2D4263;
+    --accent-color-2: #C84B31;
+    --highlight-color-light: #ECDBBA;
+    --highlight-color-dark: black;
 }
 
 .App {
@@ -29,11 +29,11 @@
     align-items: center;
     justify-content: center;
     font-size: calc(10px + 2vmin);
-    color: var(--accent-color-light);
+    color: var(--accent-color-2);
 }
 
 .App-link {
-    color: var(--accent-color-medium);
+    color: var(--accent-color-2);
 }
 
 @keyframes App-logo-spin {

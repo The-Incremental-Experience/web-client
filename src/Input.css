@@ -6,9 +6,9 @@
     margin: 15px;
     width: 50%;
 
-    border-color: var(--accent-color-medium);
-    background-color: var(--accent-color-medium);
-    color: var(--accent-color-light);
+    border-color: var(--accent-color-1);
+    background-color: var(--accent-color-1);
+    color: var(--highlight-color-light);
 
     font-size: calc(12px + 1vmin);
 }
