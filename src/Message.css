@@ -6,25 +6,47 @@
     margin: 15px;
     width: 60%;
 
-    border-color: var(--accent-color-dark);
-    background-color: var(--accent-color-dark);
-    color: var(--accent-color-light);
+    border-color: var(--accent-color-2);
+    background-color: var(--accent-color-2);
+    color: var(--highlight-color-light);
 
-    font-size: calc(12px + 1vmin);
+    font-size: calc(8px + 1vmin);
 }
 
 .Answer {
-    border-color: var(--accent-color-darker);
-    background-color: var(--accent-color-darker);
+    border-color: var(--highlight-color-dark);
+    background-color: var(--highlight-color-dark);
     align-self: flex-start;
 }
 
 .Question {
-    border-color: var(--accent-color-medium);
-    background-color: var(--accent-color-medium);
+    border-color: var(--accent-color-1);
+    background-color: var(--accent-color-1);
     align-self: flex-end;
 }
 
 .Sources {
-    margin-top: calc(12px + 1vmin);
+    margin-top: calc(8px + 1vmin);
+}
+
+/* Link */
+
+/* unvisited link */
+a:link {
+    color: var(--accent-color-2);
+}
+
+/* visited link */
+a:visited {
+    color: var(--accent-color-2);
+}
+
+/* mouse over link */
+a:hover {
+    color: var(--accent-color-1);
+}
+
+/* selected link */
+a:active {
+    color: var(--accent-color-1);
 }

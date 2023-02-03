@@ -15,11 +15,13 @@ function ChatBox({ messages }) {
       {messages.slice(0, -1).map((message, index) => (
         <MessageBox key={`MessageBox${index}`} message={message} />
       ))}
-      <div ref={messagesEndRef} />
-      <MessageBox
-        key={`MessageBox${messages.length - 1}`}
-        message={messages[messages.length - 1]}
-      />
+      {messages.length > 0 ? <div ref={messagesEndRef} /> : null}
+      {messages.length > 0 ? (
+        <MessageBox
+          key={`MessageBox${messages.length - 1}`}
+          message={messages[messages.length - 1]}
+        />
+      ) : null}
     </Box>
   );
 }
